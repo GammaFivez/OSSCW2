@@ -109,7 +109,7 @@ if (isset($_SESSION['id'])) {
       $result = mysqli_query($conn,$sql);
 //----------------------------------------------------------------------
 
-$data['content'] .= '</form>';
+//$data['content'] .= '</form>';
 
 //Initiliases user input into variables to be stored and adds protection against data injection.
 if(isset($_POST['btnCreateStudent'])){

@@ -92,7 +92,23 @@ include("_includes/functions.inc");
 if (isset($_SESSION['id'])) {
   echo template("templates/partials/header.php");
   echo template("templates/partials/nav.php");
-  
+
+//------------------------------------------------------------
+      // Create connection
+      $servername = "127.0.0.1";
+      $username = "root";
+      $password = "";
+      $dbname = "db5";
+
+      //Join Connection
+      $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+      //Select the columns within the table called Student
+      $sql = "SELECT studentid, dob, firstname, lastname, house, town, county, country, postcode, studentimage FROM student;";
+
+      $result = mysqli_query($conn,$sql);
+//----------------------------------------------------------------------
+
 $data['content'] .= '</form>';
 
 //Initiliases user input into variables to be stored and adds protection against data injection.
